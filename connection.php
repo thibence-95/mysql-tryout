@@ -8,8 +8,8 @@ function openConnection() {
     $db        = "DB_NAME";
 
     // Try to understand what happens here
-    $pdo = new PDO('mysql:host='. $dbhost .'example.com'';dbname='. $db, $dbuser, $dbpass);
+    $pdo = new PDO('mysql:host='. $dbhost .'mysql-tryout.local'.';beCode='. $db, $dbuser, $dbpass);
 
- // Why we do this here
+ // Why do we do this here?
  return $pdo;
 }
