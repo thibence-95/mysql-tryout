@@ -11,9 +11,12 @@ include 'Controller/HomePageController.php';
 include 'Model/connection.php';
 include 'View/homepage.php';
 
+
+
 $conn = new Conn;
-$conn->openConnection();
-var_dump($conn);
+$conn->postInto();
+//var_dump($conn);
+
 
 
 

@@ -4,17 +4,30 @@ class Conn
 {
     private $PDO;
 
+    private $dbhost;
+    private $dbuser;
+    private $dbpass;
+    private $db;
+
     public function openConnection()
     {
         // Try to figure out what these should be for you // identifying the programmer?
-        $dbhost = "localhost";
-        $dbuser = "thibautsalence";
-        $dbpass = "nikesbeasy";
-        $db = "beCode";
+        $this->dbhost = "localhost";
+        $this->dbuser = "thibautsalence";
+        $this->dbpass = "nikesbeasy";
+        $this->db = "beCode";
 
+        $conn = $this->PDO;
+        $conn = new PDO('mysql:host='.$this->dbhost.';dbname='.$this->db, $this->dbuser, $this->dbpass);
+    }
+
+    public function postInto()
+    {
         try {
+            $this->openConnection();
+
             $conn = $this->PDO;
-            $conn = new PDO('mysql:host='.$dbhost.';dbname='.$db, $dbuser, $dbpass);
+            $conn = new PDO('mysql:host='.$this->dbhost.';dbname='.$this->db, $this->dbuser, $this->dbpass);
 
             $post = new HomePageController();
             $assoc = $post->renderBoi();
@@ -37,7 +50,8 @@ class Conn
                 'quote' => $assoc->getQuote(),
                 'quote_author' => $assoc->getQuoteAuth()
             ]);
-            echo "Nice, You're in!";
+
+            //secho "Nice, You're in!";
         }
         catch (PDOException $e){
             echo $sql. "<br>" . $e->getMessage();
