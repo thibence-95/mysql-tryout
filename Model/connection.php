@@ -2,7 +2,7 @@
 
 class Conn
 {
-    public $PDO;
+    private $PDO;
 
     public function openConnection()
     {
@@ -18,10 +18,10 @@ class Conn
 
             //setting err mode to exception
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $sql = "INSERT INTO beCode.student (first_name, last_name, username, linkedin, email, 
+            $sql = "INSERT INTO beCode.student (first_name, last_name, username, linkedin, email, github, 
                     preferred_language, avatar, video, quote, quote_author, created_at) 
-                    VALUES ('John' 'Doe' 'john@example.com')";
-            $conn->exec($sql);
+                    VALUES (:John, :Doe, :JohnD, :linkedin, :john@example.com, :github, :prefLanguage, :avatar, :video, :quote, :quoteAuthor)";
+            $conn->prepare($sql)->execute();
             echo "Nice, You're in!";
         }
         catch (PDOException $e){

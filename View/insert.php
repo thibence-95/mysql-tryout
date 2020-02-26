@@ -28,12 +28,16 @@
 			<input type="text" name="pref-lang"><br>
 		</label>
 
-		<label for="username">Last name:<br>
-			<input type="text" name="username"><br>
-		</label>
-
 		<label for="avatar">Avatar:<br>
 			<input type="text" name="avatar"><br>
+		</label>
+
+		<label for="quote">Fav Quote:<br>
+			<input type="text" name="quote"><br>
+		</label>
+
+		<label for="quoteAuth">Quote Author:<br>
+			<input type="text" name="quoteAuth"><br>
 		</label>
 
 		<button type="submit">Submit</button>

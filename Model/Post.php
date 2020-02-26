@@ -10,12 +10,13 @@ class Post
     private $github;
     private $email;
     private $lang;
+    private $avatar;
     private $video;
     private $quote;
     private $quoteAuth;
 
     public function __construct(string $firstName, string $lastName, string $userName, $linkedin, string $github,
-                                string $email, string $lang, string $video, string $quote, string $quoteAuth)
+                                string $email, string $lang, string $avatar, string $video, string $quote, string $quoteAuth)
     {
         $this->firstName = $firstName;
         $this->lastName = $lastName;
@@ -24,6 +25,7 @@ class Post
         $this->github = $github;
         $this->email = $email;
         $this->lang = $lang;
+        $this->avatar = $avatar;
         $this->video = $video;
         $this->quote = $quote;
         $this->quoteAuth = $quoteAuth;
