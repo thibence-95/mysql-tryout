@@ -7,12 +7,14 @@ error_reporting(E_ALL);
 
 include 'Model/Post.php';
 include 'Controller/HomePageController.php';
-include 'Model/Statement.php';
+//include 'Model/Statement.php';
 include 'Model/connection.php';
 include 'View/homepage.php';
 
 $conn = new Conn;
+$conn->openConnection();
 var_dump($conn);
 
-$post = new  HomePageController();
-$post->renderBoi();
+
+
+

@@ -16,12 +16,27 @@ class Conn
             $conn = $this->PDO;
             $conn = new PDO('mysql:host='.$dbhost.';dbname='.$db, $dbuser, $dbpass);
 
+            $post = new HomePageController();
+            $assoc = $post->renderBoi();
+
             //setting err mode to exception
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $sql = "INSERT INTO beCode.student (first_name, last_name, username, linkedin, email, github, 
-                    preferred_language, avatar, video, quote, quote_author, created_at) 
-                    VALUES (:John, :Doe, :JohnD, :linkedin, :john@example.com, :github, :prefLanguage, :avatar, :video, :quote, :quoteAuthor)";
-            $conn->prepare($sql)->execute();
+            $sql = "INSERT INTO beCode.student (firstName, lastName, username, linkedin, email, github, 
+                    preferred_language, avatar, video, quote, quote_author) 
+                    VALUES (:firstName, :lastName, :username, :linkedin, :github, :email, :prefLang, :avatar, :video, :quote, :quote_author)";
+            $conn->prepare($sql)->execute([
+                'firstName' => $assoc->getFirstName(),
+                'lastName' => $assoc->getLastName(),
+                'username' => $assoc->getUserName(),
+                'linkedin' => $assoc->getLinkedin(),
+                'github' => $assoc->getGithub(),
+                'email' => $assoc->getEmail(),
+                'prefLang' => $assoc->getLang(),
+                'avatar' => $assoc->getAvatar(),
+                'video' => $assoc->getVideo(),
+                'quote' => $assoc->getQuote(),
+                'quote_author' => $assoc->getQuoteAuth()
+            ]);
             echo "Nice, You're in!";
         }
         catch (PDOException $e){

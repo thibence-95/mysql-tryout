@@ -32,6 +32,10 @@
 			<input type="text" name="avatar"><br>
 		</label>
 
+		<label for="video">Video:<br>
+			<input type="text" name="video"><br>
+		</label>
+
 		<label for="quote">Fav Quote:<br>
 			<input type="text" name="quote"><br>
 		</label>

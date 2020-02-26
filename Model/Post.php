@@ -91,6 +91,14 @@ class Post
     /**
      * @return string
      */
+    public function getAvatar(): string
+    {
+        return $this->avatar;
+    }
+
+    /**
+     * @return string
+     */
     public function getVideo(): string
     {
         return $this->video;
