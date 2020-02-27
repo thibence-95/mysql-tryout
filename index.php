@@ -7,9 +7,13 @@ error_reporting(E_ALL);
 
 include 'Model/Post.php';
 include 'Controller/HomePageController.php';
-//include 'Model/Statement.php';
 include 'Model/connection.php';
+include 'Model/Selector.php';
 include 'View/homepage.php';
+
+if ($_POST) {
+    include 'View/table.php';
+}
 
 
 

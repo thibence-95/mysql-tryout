@@ -19,6 +19,8 @@ class Conn
 
         $conn = $this->PDO;
         $conn = new PDO('mysql:host='.$this->dbhost.';dbname='.$this->db, $this->dbuser, $this->dbpass);
+
+        return $conn;
     }
 
     public function postInto()
@@ -30,7 +32,7 @@ class Conn
             $conn = new PDO('mysql:host='.$this->dbhost.';dbname='.$this->db, $this->dbuser, $this->dbpass);
 
             $post = new HomePageController();
-            $assoc = $post->renderBoi();
+            $assoc = $post->insert();
 
             //setting err mode to exception
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -51,7 +53,7 @@ class Conn
                 'quote_author' => $assoc->getQuoteAuth()
             ]);
 
-            //secho "Nice, You're in!";
+            //echo "Nice, You're in!";
         }
         catch (PDOException $e){
             echo $sql. "<br>" . $e->getMessage();

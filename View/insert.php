@@ -25,7 +25,19 @@
 		</label>
 
 		<label for="pref-lang">Preferred language:<br>
-			<input type="text" name="pref-lang"><br>
+			<select name="pref-lang">
+				<option value="en">English</option>
+				<option value="es">Español</option>
+				<option value="fr">Français</option>
+				<option value="de">Deutch</option>
+				<option value="ru">Pусский</option>
+				<option value="zh">中文</option>
+				<option value="ar">عربى</option>
+
+
+
+			</select>
+				<br>
 		</label>
 
 		<label for="avatar">Avatar:<br>
