@@ -14,7 +14,7 @@
             <?php echo $user['username'];?>
         </td>
         <td>
-            <?php echo $user['preferred_language'];?>
+            <img src="<?php echo 'Images/'. $user['preferred_language']. '.pgn' ?>" alt="flag">
         </td>
 
     </tr>

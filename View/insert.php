@@ -30,9 +30,10 @@
 				<option value="es">Español</option>
 				<option value="fr">Français</option>
 				<option value="de">Deutch</option>
+				<option value="nl">Nederlands</option>
 				<option value="ru">Pусский</option>
 				<option value="zh">中文</option>
-				<option value="ar">عربى</option>
+				<option value="ar">العربية</option>
 
 
 
