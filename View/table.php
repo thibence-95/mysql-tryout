@@ -8,13 +8,13 @@
     ?>
     <tr>
         <td>
-            <?php echo $user['firstName'];?>
+	        <a href="?user=<?php echo $user['id'];?>"><?php echo $user['firstName'];?></a>
         </td>
         <td>
             <?php echo $user['username'];?>
         </td>
         <td>
-            <img src="<?php echo 'Images/'. $user['preferred_language']. '.pgn' ?>" alt="flag">
+            <img src="<?php echo 'Images/'. $user['preferred_language']. '.png' ?>" alt="flag" style="width: 50px">
         </td>
 
     </tr>

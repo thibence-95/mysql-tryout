@@ -11,7 +11,7 @@ include 'Model/connection.php';
 include 'Model/Selector.php';
 include 'View/homepage.php';
 
-if ($_POST) {
+if ($_SERVER['REQUEST_METHOD'] == "POST") {
     include 'View/table.php';
 }
 
